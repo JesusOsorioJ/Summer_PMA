@@ -12,7 +12,7 @@ const AdminGestionVentasPagos = () => {
       <Header user="Administrador" extraInfo="Gestión de Ventas y Pagos" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow">
-        <p>Registro diario de pagos y cobros. Se visualiza el neto (ventas - % aplicado).</p>
+        <p>Registro diario de pagos y cobros. Se muestra el neto (ventas - % aplicado) y el detalle de cada operación.</p>
       </div>
     </div>
   )

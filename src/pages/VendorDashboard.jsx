@@ -14,12 +14,17 @@ const VendorDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header user="Vendedor #123" extraInfo={<CountdownTimer initialTime={7200} />} />
+      <Header
+        user="Vendedor #123"
+        extraInfo={<CountdownTimer initialTime={7200} />}
+      />
       <NavigationMenu links={navigationLinks} />
       <div className="p-4">
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-4 gap-4 mb-4">
           <ReportCard title="Balance" value="$300" />
           <ReportCard title="Vendido" value="$500" />
+          <ReportCard title="Porcentaje" value="10%" />
+          <ReportCard title="Disponible" value="$200" />
         </div>
         <div className="bg-white p-4 rounded shadow mb-4">
           <p className="font-bold">Información Rápida:</p>

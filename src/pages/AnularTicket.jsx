@@ -12,7 +12,6 @@ const AnularTicket = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleAnular = () => {
-    // Simulación de anulación
     setIsModalOpen(true)
   }
 

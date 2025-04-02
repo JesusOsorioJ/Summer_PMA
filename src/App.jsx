@@ -1,24 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import VendorDashboard from './pages/VendorDashboard'
-import VentaTicket from './pages/VentaTicket'
-import HistorialTickets from './pages/HistorialTickets'
-import AnularTicket from './pages/AnularTicket'
-import ResultadosGanadores from './pages/ResultadosGanadores'
-import EstadoCuenta from './pages/EstadoCuenta'
-import AdminDashboard from './pages/AdminDashboard'
-import AdminConfigLoterias from './pages/AdminConfigLoterias'
-import AdminGestionVentasPagos from './pages/AdminGestionVentasPagos'
-import AdminReportesBalance from './pages/AdminReportesBalance'
-import GlosarioAyuda from './pages/GlosarioAyuda'
-import AdminRegistroTransacciones from './pages/AdminRegistroTransacciones'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import VendorDashboard from "./pages/VendorDashboard";
+import VentaTicket from "./pages/VentaTicket";
+import HistorialTickets from "./pages/HistorialTickets";
+import AnularTicket from "./pages/AnularTicket";
+import ResultadosGanadores from "./pages/ResultadosGanadores";
+import EstadoCuenta from "./pages/EstadoCuenta";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminConfigLoterias from "./pages/AdminConfigLoterias";
+import AdminGestionVentasPagos from "./pages/AdminGestionVentasPagos";
+import AdminReportesBalance from "./pages/AdminReportesBalance";
+import GlosarioAyuda from "./pages/GlosarioAyuda";
+import AdminRegistroTransacciones from "./pages/AdminRegistroTransacciones";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Rutas para Vendedor */}
@@ -36,12 +36,32 @@ function App() {
         <Route path="/admin-reportes-balance" element={<AdminReportesBalance />} />
         <Route path="/glosario-ayuda" element={<GlosarioAyuda />} />
         <Route path="/admin-registro-transacciones" element={<AdminRegistroTransacciones />} />
-
         {/* Ruta por defecto */}
-        <Route path="*" element={<Login />} />
+        
+        <Route
+          path="*"
+          element={
+            <>
+              <Login />
+              <Register />
+              <VendorDashboard />
+              <VentaTicket />
+              <HistorialTickets />
+              <AnularTicket />
+              <ResultadosGanadores />
+              <EstadoCuenta />
+              <AdminDashboard />
+              <AdminConfigLoterias />
+              <AdminGestionVentasPagos />
+              <AdminReportesBalance />
+              <GlosarioAyuda />
+              <AdminRegistroTransacciones />
+            </>
+          }
+        />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,77 +1,86 @@
 import { useState } from 'react'
+import LotterySelection from './LotterySelection'
 
 const TicketForm = () => {
   const [lotteryType, setLotteryType] = useState('Chance')
   const [saleType, setSaleType] = useState('Straight')
   const [number, setNumber] = useState('')
   const [amount, setAmount] = useState('')
+  const [step, setStep] = useState(1)
+
+  const lotteries = [
+    { id: 'chance', name: 'Chance', horario: '10:00-18:00' },
+    { id: 'billete', name: 'Billete', horario: '11:00-19:00' },
+    // Más loterías según sea necesario...
+  ]
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Lógica para enviar venta (solo maquetación)
+    if (step === 1) {
+      // Validar y pasar al paso 2 (confirmación y recálculo)
+      setStep(2)
+    } else {
+      // Confirmación final y envío (solo maquetación)
+      alert('Ticket registrado')
+      setStep(1)
+    }
   }
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-      <div className="mb-4">
-        <label className="block mb-2">Tipo de Lotería</label>
-        <select
-          value={lotteryType}
-          onChange={(e) => setLotteryType(e.target.value)}
-          className="w-full border border-gray-300 p-2 rounded"
-        >
-          <option value="Chance">Chance (2 dígitos)</option>
-          <option value="Billete">Billete (4 dígitos)</option>
-          <option value="Directo">Directo (2 dígitos)</option>
-          <option value="Pallet">Pallet (combinaciones de 2)</option>
-          <option value="Tripleta">Tripleta (combinaciones de 3)</option>
-        </select>
-      </div>
+      <LotterySelection lotteries={lotteries} selected={lotteryType} onSelect={setLotteryType} />
 
-      {/* Selección de tipo de venta */}
-      <div className="mb-4">
-        <label className="block mb-2">Tipo de Venta</label>
-        <select
-          value={saleType}
-          onChange={(e) => setSaleType(e.target.value)}
-          className="w-full border border-gray-300 p-2 rounded"
-        >
-          <option value="Straight">Straight</option>
-          <option value="Box">Box</option>
-          <option value="Combo">Combo</option>
-        </select>
-      </div>
+      {/* Paso 1: Ingreso inicial */}
+      {step === 1 && (
+        <>
+          <div className="mb-4">
+            <label className="block mb-2">Número a Vender (campo amarillo)</label>
+            <input
+              type="text"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              placeholder="Ingrese número"
+              className="w-full border border-yellow-500 p-2 rounded bg-yellow-50"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2">Monto</label>
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder="Monto"
+              className="w-full border border-gray-300 p-2 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2">Modalidad de Venta</label>
+            <select value={saleType} onChange={(e) => setSaleType(e.target.value)} className="w-full border border-gray-300 p-2 rounded">
+              <option value="Straight">Straight</option>
+              <option value="Box">Box</option>
+              <option value="Combo">Combo</option>
+            </select>
+          </div>
+        </>
+      )}
 
-      <div className="mb-4">
-        <label className="block mb-2">Número a vender</label>
-        <input
-          type="text"
-          value={number}
-          onChange={(e) => setNumber(e.target.value)}
-          placeholder="Ingrese número"
-          className="w-full border border-yellow-500 p-2 rounded bg-yellow-50"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2">Monto</label>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="Monto"
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-        <p className="text-sm text-gray-500 mt-1">
-          Recalculo automático (ej: resta porcentaje y calcula ganancia)
-        </p>
-      </div>
+      {/* Paso 2: Confirmación y recálculo */}
+      {step === 2 && (
+        <div className="mb-4">
+          <p className="mb-2">Confirmación y recálculo automático:</p>
+          <p>CR Mediodía, Dir: (Ingrese número de chance de 2 dígitos)</p>
+          <p>Número a Comprar: {number} | Monto: {amount}</p>
+          <p>N° de Serie del Ticket: 00123</p>
+        </div>
+      )}
+
       <div className="mb-4">
         <div className="bg-gray-200 p-2 rounded text-center">
-          Tiempo restante para ingreso de números: 8:00 minutos
+          Tiempo restante: 8:00 minutos
         </div>
       </div>
       <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
-        Confirmar Venta
+        {step === 1 ? 'Siguiente' : 'Confirmar Venta'}
       </button>
     </form>
   )

@@ -14,10 +14,12 @@ const GlosarioAyuda = () => {
       <div className="bg-white p-4 rounded shadow">
         <h2 className="text-xl font-bold mb-4">Glosario</h2>
         <ul className="list-disc pl-6">
-          <li><strong>Biles/Chance:</strong> Definición y uso en el sistema.</li>
-          <li><strong>Balance:</strong> Diferencia entre ventas, cobros y pagos.</li>
-          <li><strong>Porcentaje:</strong> % de ganancia asignado a los vendedores.</li>
-          <li><strong>Backup:</strong> Respaldo de información.</li>
+          <li><strong>Bolsa/Backup:</strong> Fondos en el banco como colchón.</li>
+          <li><strong>Biles/Chance:</strong> Número de 2 cifras.</li>
+          <li><strong>Billete:</strong> Compuesto por 4 números.</li>
+          <li><strong>Directo:</strong> Número de 2 cifras.</li>
+          <li><strong>Pallet:</strong> Combinaciones de 2 números.</li>
+          <li><strong>Tripleta:</strong> Combinaciones de 3 números.</li>
         </ul>
         <h2 className="text-xl font-bold mt-6 mb-4">Ayuda</h2>
         <p>Instrucciones y contexto para cada módulo se muestran de forma contextual en la aplicación.</p>

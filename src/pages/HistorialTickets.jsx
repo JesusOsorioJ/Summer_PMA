@@ -10,7 +10,7 @@ const HistorialTickets = () => {
   
   // Datos de ejemplo con propiedad "detail" para ampliar la información
   const tickets = [
-    { id: 1, date: '2025-04-01', type: 'Chance', numbers: '12', amount: '$1.25', status: 'Vendido', detail: 'Detalle: Ticket normal' },
+    { id: 1, date: '2025-04-01', type: 'Chance', numbers: '12', amount: '$1.25', status: 'Vendido', detail: 'Ticket normal' },
     { id: 2, date: '2025-04-01', type: 'Billete', numbers: '1234', amount: '$2.50', status: 'Anulado', detail: 'Anulado por error' },
   ]
 

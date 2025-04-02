@@ -16,6 +16,7 @@ const TicketList = ({ tickets }) => {
           <th className="border px-4 py-2">Números</th>
           <th className="border px-4 py-2">Monto</th>
           <th className="border px-4 py-2">Estado</th>
+          <th className="border px-4 py-2">Acción</th>
         </tr>
       </thead>
       <tbody>
@@ -27,10 +28,13 @@ const TicketList = ({ tickets }) => {
               <td className="border px-4 py-2">{ticket.numbers}</td>
               <td className="border px-4 py-2">{ticket.amount}</td>
               <td className="border px-4 py-2">{ticket.status}</td>
+              <td className="border px-4 py-2">
+                <button className="bg-red-500 text-white p-1 rounded">Eliminar</button>
+              </td>
             </tr>
             {expandedTicket === ticket.id && (
               <tr>
-                <td colSpan="5" className="border px-4 py-2 bg-gray-50">
+                <td colSpan="6" className="border px-4 py-2 bg-gray-50">
                   {/* Detalle interactivo del ticket */}
                   <p><strong>Detalle:</strong> {ticket.detail}</p>
                 </td>

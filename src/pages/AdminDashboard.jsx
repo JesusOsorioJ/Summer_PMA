@@ -21,7 +21,7 @@ const AdminDashboard = () => {
           <ReportCard title="Ventas Totales" value="$2000" />
         </div>
         <div className="bg-white p-4 rounded shadow">
-          <p>Opcional: Administrador puede actuar como vendedor ingresando su número.</p>
+          <p>El administrador puede actuar como vendedor ingresando su número para registrar ventas.</p>
         </div>
       </div>
     </div>

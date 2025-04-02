@@ -16,7 +16,8 @@ const AdminRegistroTransacciones = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Lógica para registrar la transacción (solo maquetación)
+    // Simulación de registro de transacción
+    alert('Transacción registrada')
   }
 
   return (
