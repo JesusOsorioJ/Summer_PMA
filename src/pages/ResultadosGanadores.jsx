@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 
 const ResultadosGanadores = () => {
@@ -14,7 +15,7 @@ const ResultadosGanadores = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="ResultadosGanadores">
       <Header user="Vendedor #123" extraInfo="Resultados y Ganadores" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow">
@@ -28,7 +29,7 @@ const ResultadosGanadores = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 import ReportCard from '../components/ReportCard'
 
@@ -11,7 +12,7 @@ const AdminDashboard = () => {
   ]
   
   return (
-    <div className="min-h-screen bg-gray-100">
+    <Layout className="min-h-screen bg-gray-100" view="AdminDashboard">
       <Header user="Administrador" extraInfo="Caja Inicial: $1500" />
       <NavigationMenu links={navigationLinks} />
       <div className="p-4">
@@ -24,7 +25,7 @@ const AdminDashboard = () => {
           <p>El administrador puede actuar como vendedor ingresando su número para registrar ventas.</p>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

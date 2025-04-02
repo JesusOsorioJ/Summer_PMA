@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 import TicketList from '../components/TicketList'
 
@@ -15,13 +16,13 @@ const HistorialTickets = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="HistorialTickets">
       <Header user="Vendedor #123" extraInfo="Historial de Tickets" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow">
         <TicketList tickets={tickets} />
       </div>
-    </div>
+    </Layout>
   )
 }
 

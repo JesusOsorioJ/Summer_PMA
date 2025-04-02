@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 
 const GlosarioAyuda = () => {
@@ -8,7 +9,7 @@ const GlosarioAyuda = () => {
   ]
   
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="GlosarioAyuda">
       <Header user="Administrador" extraInfo="Glosario y Ayuda" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow">
@@ -23,7 +24,7 @@ const GlosarioAyuda = () => {
         <h2 className="text-xl font-bold mt-6 mb-4">Ayuda</h2>
         <p>Instrucciones y contexto para cada módulo se muestran de forma contextual en la aplicación.</p>
       </div>
-    </div>
+    </Layout>
   )
 }
 

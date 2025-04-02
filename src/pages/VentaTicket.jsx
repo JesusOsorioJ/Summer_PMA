@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 import TicketForm from '../components/TicketForm'
 
@@ -9,11 +10,11 @@ const VentaTicket = () => {
   ]
   
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="VentaTicket">
       <Header user="Vendedor #123" extraInfo="Venta de Ticket" />
       <NavigationMenu links={navigationLinks} />
       <TicketForm />
-    </div>
+    </Layout>
   )
 }
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from '../components/Header'
 import NavigationMenu from '../components/NavigationMenu'
 import { Link } from 'react-router-dom'
+import Layout from '../components/Layout'
 
 const AdminConfigLoterias = () => {
   const [lotteryData, setLotteryData] = useState({
@@ -21,7 +22,7 @@ const AdminConfigLoterias = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="AdminConfigLoterias">
       <Header user="Administrador" extraInfo="Configuración de Loterías" />
       <NavigationMenu links={navigationLinks} />
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
@@ -86,7 +87,7 @@ const AdminConfigLoterias = () => {
       <Link to="/admin-dashboard" className="bg-gray-500 text-white p-2 rounded block text-center mt-4">
         Volver al Dashboard
       </Link>
-    </div>
+    </Layout>
   )
 }
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from '../components/Header'
 import NavigationMenu from '../components/NavigationMenu'
 import Modal from '../components/Modal'
+import Layout from '../components/Layout'
 
 const AnularTicket = () => {
   const navigationLinks = [
@@ -16,7 +17,7 @@ const AnularTicket = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="AnularTicket">
       <Header user="Vendedor #123" extraInfo="Anular Ticket" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow text-center">
@@ -28,7 +29,7 @@ const AnularTicket = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <p>Ticket anulado. Retroalimentación visual aquí.</p>
       </Modal>
-    </div>
+    </Layout>
   )
 }
 

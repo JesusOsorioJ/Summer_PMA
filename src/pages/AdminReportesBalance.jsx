@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Layout from '../components/Layout'
 import NavigationMenu from '../components/NavigationMenu'
 
 const AdminReportesBalance = () => {
@@ -8,7 +9,7 @@ const AdminReportesBalance = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="AdminReportesBalance">
       <Header user="Administrador" extraInfo="Reportes y Balance" />
       <NavigationMenu links={navigationLinks} />
       <div className="bg-white p-4 rounded shadow">
@@ -24,7 +25,7 @@ const AdminReportesBalance = () => {
           <p>Gráficos y tablas consolidados de ventas, tickets ganadores y resultados por lotería.</p>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

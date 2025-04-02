@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from '../components/Header'
 import NavigationMenu from '../components/NavigationMenu'
+import Layout from '../components/Layout'
 
 const AdminRegistroTransacciones = () => {
   const navigationLinks = [
@@ -21,7 +22,7 @@ const AdminRegistroTransacciones = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <Layout className="min-h-screen bg-gray-100 p-4" view="AdminRegistroTransacciones">
       <Header user="Administrador" extraInfo="Registro de Transacciones" />
       <NavigationMenu links={navigationLinks} />
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md mb-4">
@@ -66,7 +67,7 @@ const AdminRegistroTransacciones = () => {
         <p>Total Egresos: $Y</p>
         <p>Saldo Actual: $Z</p>
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import CountdownTimer from '../components/CountdownTimer'
 import NavigationMenu from '../components/NavigationMenu'
 import ReportCard from '../components/ReportCard'
+import Layout from '../components/Layout'
 
 const VendorDashboard = () => {
   const navigationLinks = [
@@ -13,7 +14,7 @@ const VendorDashboard = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <Layout className="min-h-screen bg-gray-100" view="VendorDashboard">
       <Header
         user="Vendedor #123"
         extraInfo={<CountdownTimer initialTime={7200} />}
@@ -32,7 +33,7 @@ const VendorDashboard = () => {
           <p>N° de Serie del Ticket: 00123</p>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
