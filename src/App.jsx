@@ -22,6 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Rutas para Vendedor */}
+        <Route path="*" element={<VendorDashboard />} />
         <Route path="/vendor-dashboard" element={<VendorDashboard />} />
         <Route path="/venta-ticket" element={<VentaTicket />} />
         <Route path="/historial-tickets" element={<HistorialTickets />} />
@@ -37,28 +38,6 @@ function App() {
         <Route path="/glosario-ayuda" element={<GlosarioAyuda />} />
         <Route path="/admin-registro-transacciones" element={<AdminRegistroTransacciones />} />
 
-        {/* Ruta por defecto */}
-        <Route
-          path="*"
-          element={
-            <>
-              <Login />
-              <Register />
-              <VendorDashboard />
-              <VentaTicket />
-              <HistorialTickets />
-              <AnularTicket />
-              <ResultadosGanadores />
-              <EstadoCuenta />
-              <AdminDashboard />
-              <AdminConfigLoterias />
-              <AdminGestionVentasPagos />
-              <AdminReportesBalance />
-              <GlosarioAyuda />
-              <AdminRegistroTransacciones />
-            </>
-          }
-        />
       </Routes>
     </Router>
   );
