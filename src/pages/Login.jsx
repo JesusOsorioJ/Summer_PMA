@@ -1,8 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-800 gap-3 flex flex-col items-center  justify-center">
+      <Link to="/" className="flex ms-2">
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          className="h-8 me-3"
+          alt="FlowBite Logo"
+        />
+        <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
+          SUMMER
+        </span>
+      </Link>
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Iniciar Sesión</h1>
         <form>
@@ -22,7 +32,10 @@ const Login = () => {
               placeholder="********"
             />
           </div>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-2 rounded"
+          >
             Entrar
           </button>
         </form>
@@ -34,7 +47,7 @@ const Login = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
