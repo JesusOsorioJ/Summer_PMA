@@ -2,7 +2,7 @@ import { useState } from 'react'
 import LotterySelection from './LotterySelection'
 
 const TicketForm = () => {
-  const [lotteryType, setLotteryType] = useState('Chance')
+  const [lotteryType, setLotteryType] = useState('chance')
   const [saleType, setSaleType] = useState('Straight')
   const [number, setNumber] = useState('')
   const [amount, setAmount] = useState('')
@@ -11,16 +11,16 @@ const TicketForm = () => {
   const lotteries = [
     { id: 'chance', name: 'Chance', horario: '10:00-18:00' },
     { id: 'billete', name: 'Billete', horario: '11:00-19:00' },
-    // Más loterías según sea necesario...
+    // Otros tipos de lotería según sea necesario...
   ]
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (step === 1) {
-      // Validar y pasar al paso 2 (confirmación y recálculo)
+      // Validación y transición al Paso 2 (confirmación y recálculo)
       setStep(2)
     } else {
-      // Confirmación final y envío (solo maquetación)
+      // Confirmación final (solo maquetación)
       alert('Ticket registrado')
       setStep(1)
     }
@@ -68,9 +68,10 @@ const TicketForm = () => {
       {step === 2 && (
         <div className="mb-4">
           <p className="mb-2">Confirmación y recálculo automático:</p>
-          <p>CR Mediodía, Dir: (Ingrese número de chance de 2 dígitos)</p>
+          <p>Tipo de Lotería: {lotteryType}</p>
           <p>Número a Comprar: {number} | Monto: {amount}</p>
           <p>N° de Serie del Ticket: 00123</p>
+          <p>Detalles adicionales: CR Mediodía, Dir, etc.</p>
         </div>
       )}
 

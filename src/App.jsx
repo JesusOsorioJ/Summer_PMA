@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Rutas para Vendedor */}
@@ -36,8 +36,8 @@ function App() {
         <Route path="/admin-reportes-balance" element={<AdminReportesBalance />} />
         <Route path="/glosario-ayuda" element={<GlosarioAyuda />} />
         <Route path="/admin-registro-transacciones" element={<AdminRegistroTransacciones />} />
+
         {/* Ruta por defecto */}
-        
         <Route
           path="*"
           element={
