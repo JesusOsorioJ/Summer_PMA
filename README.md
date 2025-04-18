@@ -7,7 +7,7 @@ URL = https://summer-pma.vercel.app/
 ---
 
 ## 1. Resumen General
- 
+  
 ### Módulo Vendedor
 
 - **Registro de Ventas en Tiempo Real:** Permite el ingreso y seguimiento de ventas.
